@@ -197,19 +197,20 @@ section .title::after{
     margin-top: 25px;
     font-size: 27px;
     animation: jiggle 0.5s ;
+    animation-delay: 1s;
 }
 .home .home-content .text-2{
     font-size: 70px;
     font-weight: 600;
     margin-left: -3px;
     animation: jiggle 0.5s ;
-    animation-delay: 0.5s;
+    animation-delay: 1.5s;
 }
 .home .home-content .text-3{
     font-size: 40px;
     margin: 5px 0;
     animation: jiggle 0.5s ;
-    animation-delay: 1s;
+    animation-delay: 2s;
 }
 .home .home-content .text-3 span{
     color: var(--primary-color);
@@ -219,12 +220,12 @@ section .title::after{
     font-size: 27px;
     margin: 8px 0;
     animation: jiggle 0.5s ease;
-    animation-delay: 1.5s;
+    animation-delay: 2.5s;
 }
 .home .home-content .text-5{
     font-size: 45px;
     animation: jiggle 0.5s ease;
-    animation-delay: 2s;
+    animation-delay: 3s;
 }
 .home .home-content .text-5 span{
     color: var(--primary-color);
@@ -242,7 +243,7 @@ section .title::after{
     border: 2px solid var(--primary-color);
     transition: all 0.3s ease;
     animation: jiggle 0.5s ease;
-    animation-delay: 2.5s;
+    animation-delay: 3.5s;
 }
 .home .home-content a:hover{
     color: var(--primary-color);
