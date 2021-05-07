@@ -30,25 +30,36 @@ html{
 }
 
 /* general styling */
+
+/* .fade {
+    opacity: 1;
+} */
+
 section{
-    padding: 50px 0;
+    padding: 90px 0;
 }
 .max-width{
     max-width: 1300px;
     padding: 0 80px;
     margin: auto;
 }
-.about, .project, .skills, .teams, .contact, footer{
+.about, .project, .skills, .contact, footer{
     font-family: 'Montserrat', sans-serif;
 }
 .about .about-content,
-.project .project-content,
 .skills .skills-content,
 .contact .contact-content{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+}
+.project .project-content{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: space-around;
+    align-content: center;
 }
 section .title{
     position: relative;
@@ -58,6 +69,10 @@ section .title{
     margin-bottom: 60px;
     padding-bottom: 20px;
     font-family: 'Nunito', sans-serif;
+    transition: all 0.5s ease;
+}
+section .title:hover{
+    color: var(--primary-color);
 }
 section .title::after{
     content: "";
@@ -181,15 +196,20 @@ section .title::after{
 .home .home-content .text-1{
     margin-top: 25px;
     font-size: 27px;
+    animation: jiggle 0.5s ;
 }
 .home .home-content .text-2{
     font-size: 70px;
     font-weight: 600;
     margin-left: -3px;
+    animation: jiggle 0.5s ;
+    animation-delay: 0.5s;
 }
 .home .home-content .text-3{
     font-size: 40px;
     margin: 5px 0;
+    animation: jiggle 0.5s ;
+    animation-delay: 1s;
 }
 .home .home-content .text-3 span{
     color: var(--primary-color);
@@ -198,9 +218,13 @@ section .title::after{
 .home .home-content .text-4{
     font-size: 27px;
     margin: 8px 0;
+    animation: jiggle 0.5s ease;
+    animation-delay: 1.5s;
 }
 .home .home-content .text-5{
     font-size: 45px;
+    animation: jiggle 0.5s ease;
+    animation-delay: 2s;
 }
 .home .home-content .text-5 span{
     color: var(--primary-color);
@@ -217,6 +241,8 @@ section .title::after{
     border-radius: 50px;
     border: 2px solid var(--primary-color);
     transition: all 0.3s ease;
+    animation: jiggle 0.5s ease;
+    animation-delay: 2.5s;
 }
 .home .home-content a:hover{
     color: var(--primary-color);
@@ -275,14 +301,15 @@ section .title::after{
     padding: 35px 25px;
     cursor: pointer;
     transition: all 0.3s ease;
+    margin-bottom: 20px;
 }
 .project .project-content .card:hover{
     background: var(--primary-color);
 }
-.project .project-content .card .box{
+.project .project-content .card {
     transition: all 0.3s ease;
 }
-.project .project-content .card:hover .box{
+.project .project-content .card:hover {
     transform: scale(1.05);
 }
 .project .project-content .card i{
@@ -307,6 +334,22 @@ section .title::after{
 }
 .project .project-content .card .status .completed{
     color: rgb(0, 218, 0);
+}
+.project .project-content a{
+    display: inline-block;
+    background: white;
+    color: black;
+    font-size: 15px;
+    padding: 10px 15px;
+    margin-top: 20px;
+    font-weight: 400;
+    border-radius: 50px;
+    border: 2px solid rgb(0, 218, 0);
+    transition: all 0.3s ease;
+}
+.project .project-content a:hover{
+    color: white;
+    background: rgb(0, 218, 0);
 }
 
 /* skills section styling */
@@ -358,16 +401,16 @@ section .title::after{
     top: 0;
     background: var(--primary-color);
 }
-.skills-content .right .html::before{
+.skills-content .right .python::before{
     width: 40%;
+}
+.skills-content .right .cpp::before{
+    width: 40%;
+}
+.skills-content .right .html::before{
+    width: 35%;
 }
 .skills-content .right .css::before{
-    width: 40%;
-}
-.skills-content .right .js::before{
-    width: 30%;
-}
-.skills-content .right .php::before{
     width: 30%;
 }
 .skills-content .right .mysql::before{
@@ -376,69 +419,6 @@ section .title::after{
 .skills-content .right .rn::before{
     width: 20%;
 }
-
-/* teams section styling */
-/* .teams .title::after{
-    content: "who with me";
-}
-.teams .carousel .card{
-    background: #222;
-    border-radius: 6px;
-    padding: 25px 35px;
-    text-align: center;
-    overflow: hidden;
-    transition: all 0.3s ease;
-}
-.teams .carousel .card:hover{
-    background: var(--primary-color);
-}
-.teams .carousel .card .box{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-}
-.teams .carousel .card:hover .box{
-    transform: scale(1.05);
-}
-.teams .carousel .card .text{
-    font-size: 25px;
-    font-weight: 500;
-    margin: 10px 0 7px 0;
-}
-.teams .carousel .card img{
-    height: 150px;
-    width: 150px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 5px solid var(--primary-color);
-    transition: all 0.3s ease;
-}
-.teams .carousel .card:hover img{
-    border-color: #fff;
-}
-.owl-dots{
-    text-align: center;
-    margin-top: 20px;
-}
-.owl-dot{
-    height: 13px;
-    width: 13px;
-    margin: 0 5px;
-    outline: none!important;
-    border-radius: 50%;
-    border: 2px solid var(--primary-color)!important;
-    transition: all 0.3s ease;
-}
-.owl-dot.active{
-    width: 35px;
-    border-radius: 14px;
-}
-.owl-dot.active,
-.owl-dot:hover{
-    background: var(--primary-color)!important;
-} */
 
 /* contact section styling */
 .contact .contact-content .column{
@@ -473,11 +453,17 @@ section .title::after{
 .contact .contact-content .socmed .head{
     font-weight: 500;
     margin-bottom: 10px;
+
 }
 .contact .contact-content .socmed a{
     padding-right: 10px;
 }
-
+.contact .contact-content .socmed i{
+    transition: all 0.3s ease;
+}
+.contact .contact-content .socmed i:hover{
+    color: white;
+}
 
 .contact .right form .fields{
     display: flex;
@@ -515,11 +501,11 @@ section .title::after{
   padding-top: 10px;
   resize: none;
 }
-.contact .right form .button-area{
+.contact .right form .button{
   display: flex;
   align-items: center;
 }
-.right form .button-area button{
+.right form .button button{
   color: #fff;
   display: block;
   width: 160px!important;
@@ -527,17 +513,29 @@ section .title::after{
   outline: none;
   font-size: 18px;
   font-weight: 500;
-  border-radius: 6px;
+  border-radius: 50px;
   cursor: pointer;
   flex-wrap: nowrap;
   background: var(--primary-color);
   border: 2px solid var(--primary-color);
   transition: all 0.3s ease;
 }
-.right form .button-area button:hover{
+.right form .button button:hover{
   color: var(--primary-color);
   background: none;
 }
+#status{
+    padding-top: 10px;
+}
+#status.success{
+    color: rgb(0, 218, 0);
+    animation: status 4s ease forwards;
+}
+#status.error{
+    color: red;
+    animation: status 4s ease forwards;
+}
+
 /* footer section styling */
 footer{
     background: #111;
@@ -553,8 +551,22 @@ footer span a:hover{
     text-decoration: underline;
 }
 
+@keyframes jiggle {
+    0%{
+        transform: translate(0,0);
+    }
+    33%{
+        transform: translate(-5px,0);
+    }
+    66%{
+        transform: translate(5px,0);
+    }
+    100%{
+        transform: translate(0,0);
+    }    
+  }
 
-/* responsive media query start */
+/* responsive media query */
 @media (max-width: 1104px) {
     .about .about-content .left img{
         height: 350px;
@@ -689,3 +701,4 @@ footer span a:hover{
         line-height: 38px;
     }
 }
+
